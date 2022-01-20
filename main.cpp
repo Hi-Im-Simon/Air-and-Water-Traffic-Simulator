@@ -1,3 +1,6 @@
+#define _WIN32_WINNT 0x0501
+
+#include "libs/mingw.thread.h"
 #include <iostream>
 #include <thread>
 #include <windows.h>
@@ -11,6 +14,7 @@ void user_tasks() {
 
 int main() {
     std::thread thread1(user_tasks);
+    
     while (true) {
         std::cout << "eo" << std::endl;
 
