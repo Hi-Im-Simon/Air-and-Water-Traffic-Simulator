@@ -2,7 +2,6 @@
 
 #include "libs/mingw.thread.h"
 #include <iostream>
-#include <thread>
 #include <windows.h>
 
 // to miało być współbieżnie, ale c++ jest ułomny i nie ma współbieżności, którą by można prosto zrobić
@@ -18,6 +17,6 @@ int main() {
     while (true) {
         std::cout << "eo" << std::endl;
 
-        Sleep(1000); // możeliwe że trzeba będzie zmienić pliki hpp na h
+        Sleep(1000); // możeliwe że trzeba będzie zmienić pliki hpp na h, bo c++ może nie ogarniać bibliotek z C
     }
 }
