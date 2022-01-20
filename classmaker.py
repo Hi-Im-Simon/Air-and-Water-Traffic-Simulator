@@ -4,7 +4,7 @@ import sys
 
 name = sys.argv[1]
 
-file = open(f'{ name }.hpp', 'w+')
+file = open(f'classes/{ name }.hpp', 'w+')
 file.write(
 f"""#ifndef { f'{ name.upper() }_HPP' }
 #define { f'{ name.upper() }_HPP' }
@@ -20,7 +20,7 @@ class { name } {{
 )
 file.close()
 
-file = open(f'{ name }.cpp', 'w+')
+file = open(f'classes/{ name }.cpp', 'w+')
 file.write(
 f"""#include "{ name }.hpp"
 
