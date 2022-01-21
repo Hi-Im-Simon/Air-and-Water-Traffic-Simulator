@@ -5,12 +5,9 @@
 
 class Plane {
     public:
-        Plane(float speed);
-        float speed;
-        std::pair<float, float> position;
-        std::vector<int> route;
-    protected:
-
+        std::string name;
+        std::vector<std::string> route;
+        Plane(std::string name);
 };
 
-#endif PLANE_HPP
+#endif

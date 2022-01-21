@@ -1,5 +1,5 @@
 #include "Plane.hpp"
 
-Plane::Plane() {
-    
+Plane::Plane(std::string name) {
+    this->name = name;
 }

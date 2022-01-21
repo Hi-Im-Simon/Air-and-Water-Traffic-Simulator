@@ -3,7 +3,8 @@
 
 class Airport {
     public:
-
+        std::string name;
+        Airport(std::string name);
     protected:
 
 };
