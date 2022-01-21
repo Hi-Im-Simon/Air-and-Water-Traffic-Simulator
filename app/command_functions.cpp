@@ -1,4 +1,4 @@
-std::string await_user_command_input() {
+std::string await_user_command_input() {    // alternative command input without displaying the whole menu
     std::string command;
     std::cout << "Choose an action ([menu] - display the menu): ";
     std::cin >> command;
@@ -18,6 +18,19 @@ void command_planes() {
                 std::cout << prefix << airport; 
                 prefix = " - ";
             }
+        }
+
+        std::cout << std::endl;
+    }
+}
+
+void command_airports() {
+    if (airports.size() < 1) {
+        std::cout << std::endl << "There are no airports in the database yet. Exiting..." << std::endl;
+    }
+    else {
+        for (Airport& airport : airports) {
+            std::cout << std::endl << "Name: " << airport.name << ", Position: " << airport.x << " x " << airport.y;
         }
 
         std::cout << std::endl;
@@ -76,9 +89,50 @@ void command_addplane() {
         }
     }
     
+    // add to BD
     plane.route = route;
     planes.push_back(plane);
     std::cout << std::endl << "Successfully added a new plane!" << std::endl;
+}
+
+void command_addairport() {
+    std::string name, x_str, y_str;
+
+    // get name
+    int valid_name;
+    do {
+        valid_name = true;
+        std::cout << std::endl << "Name of the airport: ";
+        std::cin >> name;
+
+        for (Airport& airport : airports) {
+            if (airport.name == name) {
+                std::cout << "This name is already taken! Try again...";
+                valid_name = false;
+            }
+        }
+    } while (!valid_name);
+
+    std::cout << "X position: ";
+    std::cin >> x_str;
+    while (!is_number(x_str)) {
+        std::cout << "Positions have to be numbers! Try again..." << std::endl << "X position: ";
+        std::cin >> x_str;
+    }
+
+    std::cout << "Y position: ";
+    std::cin >> y_str;
+    while (!is_number(y_str)) {
+        std::cout << "Positions have to be numbers! Try again..." << std::endl << "Y position: ";
+        std::cin >> y_str;
+    }
+
+    float x = std::stof(x_str);
+    float y = std::stof(y_str);
+
+    Airport airport(name, x, y);
+    airports.push_back(airport);
+    std::cout << std::endl << "Successfully added a new airport!" << std::endl;
 }
 
 void command_time() {

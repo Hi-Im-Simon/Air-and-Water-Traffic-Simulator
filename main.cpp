@@ -2,14 +2,16 @@
 #include "libs/mingw.thread.h"
 
 #include <iostream>
-#include <windows.h>
 #include <string>
 #include <vector>
+#include <windows.h>
+#include <ctype.h>
 
 #include "classes/Plane.cpp"
 #include "classes/Airport.cpp"
 
 #include "app/common.hpp"
+#include "app/common_functions.hpp"
 #include "app/user.cpp"
 
 
@@ -18,12 +20,6 @@ int main() {
     std::cout << std::endl << "~~~~~ Welcome to the simulation! ~~~~~";
 
     std::thread thread_user(user_main);
-
-    Airport ap("pepe");
-    airports.push_back(ap);
-    Airport aaa("eo");
-    airports.push_back(aaa);
-
     
     while (running) {
         // code

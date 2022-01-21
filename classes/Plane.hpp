@@ -1,8 +1,6 @@
 #ifndef PLANE_HPP
 #define PLANE_HPP
 
-#include <vector>
-
 class Plane {
     public:
         std::string name;

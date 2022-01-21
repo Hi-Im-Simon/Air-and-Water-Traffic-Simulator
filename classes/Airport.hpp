@@ -4,7 +4,8 @@
 class Airport {
     public:
         std::string name;
-        Airport(std::string name);
+        float x, y;
+        Airport(std::string name, float x, float y);
     protected:
 
 };
