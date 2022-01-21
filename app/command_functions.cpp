@@ -27,7 +27,7 @@ void command_planes() {
             }
 
             if (plane.route.size() > 1) {
-                std::cout << " = " << plane.route_length << "km" << "\tTravelled: " << plane.travelled << "km";
+                std::cout << " = " << plane.route_lengths.back() << "km" << "\tTravelled: " << plane.travelled << "km";
             }
         }
 

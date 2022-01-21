@@ -6,7 +6,7 @@ class Plane {
         std::string name;
         std::vector<Airport> route;
         int speed;
-        float route_length;
+        std::vector<float> route_lengths;
         float travelled;
         Plane(std::string name, std::vector<Airport> route);
 };

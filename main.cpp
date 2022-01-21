@@ -27,10 +27,10 @@ int main() {
         // increment planes' travel distance
         for (Plane& plane : planes) {
             float temp_travelled = plane.travelled + plane.speed / 60;  // increment by speed in km/min
-            if (temp_travelled < plane.route_length)
+            if (temp_travelled < plane.route_lengths.back())
                 plane.travelled = temp_travelled;
             else
-                plane.travelled = plane.route_length;
+                plane.travelled = plane.route_lengths.back();
         }
 
         simulation_time++;
