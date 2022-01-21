@@ -4,11 +4,13 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 #include <windows.h>
 #include <ctype.h>
+#include <math.h>
 
-#include "classes/Plane.cpp"
 #include "classes/Airport.cpp"
+#include "classes/Plane.cpp"
 
 #include "app/common.hpp"
 #include "app/common_functions.hpp"
@@ -22,7 +24,14 @@ int main() {
     std::thread thread_user(user_main);
     
     while (running) {
-        // code
+        // increment planes' travel distance
+        for (Plane& plane : planes) {
+            float temp_travelled = plane.travelled + plane.speed / 60;  // increment by speed in km/min
+            if (temp_travelled < plane.route_length)
+                plane.travelled = temp_travelled;
+            else
+                plane.travelled = plane.route_length;
+        }
 
         simulation_time++;
         Sleep(1000 / simulation_speed); // możliwe że trzeba będzie zmienić pliki hpp na h, bo c++ może nie ogarniać bibliotek z C

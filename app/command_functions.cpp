@@ -10,13 +10,24 @@ void command_planes() {
         std::cout << std::endl << "There are no planes in the database yet. Exiting..." << std::endl;
     }
     else {
-        std::string prefix = "";
         for (Plane& plane : planes) {
-            std::cout << std::endl << "Name: " << plane.name << ", Route: ";
+            std::string prefix = "";
 
-            for (std::string airport : plane.route) {
-                std::cout << prefix << airport; 
-                prefix = " - ";
+            std::cout << std::endl << "Name: " << plane.name << "\tRoute: ";
+            
+            if (plane.route.size() == 0)
+                std::cout << "- (stationary)";
+            else if (plane.route.size() == 1)
+                std::cout << plane.route[0].name << " (stationary)";
+            else {
+                for (Airport airport : plane.route) {
+                    std::cout << prefix << airport.name; 
+                    prefix = " - ";
+                }
+            }
+
+            if (plane.route.size() > 1) {
+                std::cout << " = " << plane.route_length << "km" << "\tTravelled: " << plane.travelled << "km";
             }
         }
 
@@ -39,7 +50,7 @@ void command_airports() {
 
 void command_addplane() {
     std::string name, temp_airport;
-    std::vector<std::string> route;
+    std::vector<Airport> route;
     // int speed;  // might add later
     int route_i = 1;
 
@@ -58,8 +69,6 @@ void command_addplane() {
         }
     } while (!valid_name);
 
-    Plane plane(name);
-
     // get route
     std::cin.ignore();
     while (true) {
@@ -70,10 +79,10 @@ void command_addplane() {
         if (temp_airport.length() == 0)
             break;
 
-        if (route.size() == 0 || route.back() != temp_airport) {    // check if plane isn't trying to go from-to the same airport
+        if (route.size() == 0 || route.back().name != temp_airport) {    // check if plane isn't trying to go from-to the same airport
             for (Airport& airport : airports) {
                 if (airport.name == temp_airport) {
-                    route.push_back(temp_airport);
+                    route.push_back(airport);
                     valid_airport = true;
                 }
             }
@@ -90,7 +99,7 @@ void command_addplane() {
     }
     
     // add to BD
-    plane.route = route;
+    Plane plane(name, route);
     planes.push_back(plane);
     std::cout << std::endl << "Successfully added a new plane!" << std::endl;
 }
@@ -113,14 +122,14 @@ void command_addairport() {
         }
     } while (!valid_name);
 
-    std::cout << "X position: ";
+    std::cout << "X coordinate (km): ";
     std::cin >> x_str;
     while (!is_number(x_str)) {
         std::cout << "Positions have to be numbers! Try again..." << std::endl << "X position: ";
         std::cin >> x_str;
     }
 
-    std::cout << "Y position: ";
+    std::cout << "Y coordinate (km): ";
     std::cin >> y_str;
     while (!is_number(y_str)) {
         std::cout << "Positions have to be numbers! Try again..." << std::endl << "Y position: ";
