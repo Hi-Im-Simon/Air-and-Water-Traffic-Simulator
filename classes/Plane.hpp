@@ -21,7 +21,7 @@ class Plane {
         Plane(std::string, std::vector<Airport>);
         
         void print_info();
-        void action(std::vector<Airport>);
+        void action();
         int land_plane(std::string);
         void depart_plane(std::string);
 

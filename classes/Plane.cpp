@@ -51,7 +51,7 @@ void Plane::print_info() {
     }
 }
 
-void Plane::action(std::vector<Airport> airports) {
+void Plane::action() {
     if (route.size() > 1) {
         if (state == "departure") {
             if (land_depart_timer >= departure_length) {

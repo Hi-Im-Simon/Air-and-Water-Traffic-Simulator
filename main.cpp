@@ -23,7 +23,7 @@ int main() {
     while (running) {
         // increment planes' travel distance
         for (Plane& plane : planes) {   // to wszystko jest przykładowe, można wyjebać i dać coś bardziej zaawansowanego
-            plane.action(airports);
+            plane.action();
         }
 
         simulation_time++;
