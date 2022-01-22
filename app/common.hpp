@@ -6,9 +6,3 @@ int simulation_time = 0;    // how many "ticks" have been performed (minutes(?) 
 int stopover_length = 60;   // length of a plane stopover in an airport (in minutes)
 int departure_length = 15;    // length of a plane's departure (in minutes)
 int landing_length = 15;    // length of a plane's landing (in minutes)
-
-class Plane;
-class Airport;
-
-std::vector<Plane> planes;
-std::vector<Airport> airports;

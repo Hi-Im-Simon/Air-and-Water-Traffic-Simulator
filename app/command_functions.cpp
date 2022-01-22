@@ -59,7 +59,7 @@ void command_addplane() {
             break;
 
         if (route.size() == 0 || route.back().name != temp_airport) {    // check if plane isn't trying to go from-to the same airport
-            for (Airport airport : airports) {
+            for (Airport& airport : airports) {
                 if (airport.name == temp_airport) {
                     route.push_back(airport);
                     valid_airport = true;
@@ -81,6 +81,9 @@ void command_addplane() {
     
     // add to BD
     Plane plane(name, route);
+
+    
+
     planes.push_back(plane);
     std::cout << std::endl << "Successfully added a new plane!" << std::endl;
 }

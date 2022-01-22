@@ -22,7 +22,7 @@ class Plane {
         Plane(std::string name, std::vector<Airport> route);
         
         void print_info();
-        void action();
+        void action(std::vector<Airport> airports);
 
     protected:
         int land_depart_timer = 0;
