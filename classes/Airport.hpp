@@ -6,7 +6,7 @@ class Airport {
         std::string name;
         float x, y;
         int size, free_space;
-        Airport(std::string name, float x, float y, int size);
+        Airport(std::string, float, float, int);
 
         void print_info();
         int land_plane();

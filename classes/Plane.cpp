@@ -6,7 +6,6 @@ Plane::Plane(std::string name, std::vector<Airport> route) {
 
     if (route.size() > 0) {
         this->last_airport = route[0].name;
-        route[0].land_plane();
     }
 
     if (route.size() > 1) {
@@ -58,6 +57,7 @@ void Plane::action(std::vector<Airport> airports) {
             if (land_depart_timer >= departure_length) {
                 this->land_depart_timer = 0;
                 this->state = "flight";
+                depart_plane(last_airport);
             }
             else
                 this->land_depart_timer += 1;
@@ -68,12 +68,19 @@ void Plane::action(std::vector<Airport> airports) {
                 // std::cout << travelled << " " << temp_travelled << " / " << route_lengths[i] << std::endl; 
                 if (travelled < route_lengths[i] && temp_travelled >= route_lengths[i]) {
                     this->travelled = route_lengths[i];
-                    this->state = "landing";
                     this->last_airport = route[i].name;
+
+                    if (land_plane(last_airport))
+                        this->state = "landing";
+                    else
+                        this->state = "waiting for landing spot";
                     return;
                 }
             }
             this->travelled = temp_travelled;
+        }
+        else if (state == "waiting for landing spot" && land_plane(last_airport)) {
+            this->state = "landing";
         }
         else if (state == "landing") {
             if (land_depart_timer >= landing_length) {
@@ -94,5 +101,22 @@ void Plane::action(std::vector<Airport> airports) {
             else
                 this->stopover_timer += 1;
         }
+    }
+}
+
+int Plane::land_plane(std::string ap) {
+    for (Airport& airport : airports) {
+        if (airport.name == ap) {
+            if (airport.land_plane())
+                return 1;
+            return 0;
+        }
+    }
+}
+
+void Plane::depart_plane(std::string ap) {
+    for (Airport& airport : airports) {
+        if (airport.name == ap)
+            airport.depart_plane();
     }
 }
