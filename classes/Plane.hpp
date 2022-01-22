@@ -17,6 +17,7 @@ class Plane {
         // landing - plane will land at an airport in 15 minutes
         // stopover - plane is in one of its connecting airports and waits (1 hour)
         // arrived - plane has finished the whole flight
+        // airport full - airport is full and plane is waiting for it to empty
 
         Plane(std::string name, std::vector<Airport> route);
         

@@ -56,6 +56,7 @@ void user_main() {
 
     while (running) {
         display_menu();
+        
         std::cin >> command;
 
         process_command(command);        

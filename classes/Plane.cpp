@@ -4,8 +4,12 @@ Plane::Plane(std::string name, std::vector<Airport> route) {
     this->name = name;
     this->route = route;
 
-    if (route.size() > 1) {
+    if (route.size() > 0) {
         this->last_airport = route[0].name;
+        route[0].land_plane();
+    }
+
+    if (route.size() > 1) {
         this->state = "departure";
         float length = 0;
         route_lengths.push_back(0);
@@ -23,29 +27,29 @@ Plane::Plane(std::string name, std::vector<Airport> route) {
 void Plane::print_info() {
     std::string prefix = "";
 
-        std::cout << std::endl << "[Name]: " << name << " [State]: " << state;
-        if (state == "landing")
-            std::cout << " in " << last_airport;
-        else if (state == "stopover")
-            std::cout << " in " << last_airport;
-        else if (state == "departure")
-            std::cout << " from " << last_airport;
-        std::cout << "\t[Route]: ";
-        
-        if (route.size() == 0)
-            std::cout << "-";
-        else if (route.size() == 1)
-            std::cout << route[0].name;
-        else {
-            for (Airport airport : route) {
-                std::cout << prefix << airport.name; 
-                prefix = " - ";
-            }
+    std::cout << std::endl << "[Name]: " << name << " [State]: " << state;
+    if (state == "landing")
+        std::cout << " in " << last_airport;
+    else if (state == "stopover")
+        std::cout << " in " << last_airport;
+    else if (state == "departure")
+        std::cout << " from " << last_airport;
+    std::cout << "\t[Route]: ";
+    
+    if (route.size() == 0)
+        std::cout << "-";
+    else if (route.size() == 1)
+        std::cout << route[0].name;
+    else {
+        for (Airport airport : route) {
+            std::cout << prefix << airport.name; 
+            prefix = " - ";
         }
+    }
 
-        if (route.size() > 1) {
-            std::cout << " = " << route_lengths.back() << "km" << "\t[Travelled]: " << travelled << "km";
-        }
+    if (route.size() > 1) {
+        std::cout << " = " << route_lengths.back() << "km" << "\t[Travelled]: " << travelled << "km";
+    }
 }
 
 void Plane::action() {

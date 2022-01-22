@@ -5,9 +5,14 @@ class Airport {
     public:
         std::string name;
         float x, y;
-        Airport(std::string name, float x, float y);
-    protected:
+        int size, free_space;
+        Airport(std::string name, float x, float y, int size);
 
+        void print_info();
+        int land_plane();
+        void depart_plane();
+
+    protected:
 };
 
 #endif

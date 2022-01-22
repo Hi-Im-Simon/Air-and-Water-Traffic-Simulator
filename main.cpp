@@ -14,11 +14,8 @@
 #include "classes/Airport.cpp"
 #include "classes/Plane.cpp"
 
-#include "app/common_functions.cpp"
-#include "app/starting_objects.cpp"
+#include "app/common.cpp"
 #include "app/user.cpp"
-
-
 
 int main() {
     std::cout << std::endl << "~~~~~ Welcome to the simulation! ~~~~~";

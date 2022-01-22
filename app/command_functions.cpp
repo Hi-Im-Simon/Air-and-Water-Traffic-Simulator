@@ -2,6 +2,7 @@ std::string await_user_command_input() {    // alternative command input without
     std::string command;
     std::cout << "Choose an action ([menu] - display the menu): ";
     std::cin >> command;
+
     return command;
 }
 
@@ -20,10 +21,8 @@ void command_airports() {
         std::cout << std::endl << "There are no airports in the database yet. Exiting..." << std::endl;
     }
     else {
-        for (Airport& airport : airports) {
-            std::cout << std::endl << "Name: " << airport.name << ", Position: " << airport.x << " x " << airport.y;
-        }
-
+        for (Airport airport : airports)
+            airport.print_info();
         std::cout << std::endl;
     }
 }
@@ -60,7 +59,7 @@ void command_addplane() {
             break;
 
         if (route.size() == 0 || route.back().name != temp_airport) {    // check if plane isn't trying to go from-to the same airport
-            for (Airport& airport : airports) {
+            for (Airport airport : airports) {
                 if (airport.name == temp_airport) {
                     route.push_back(airport);
                     valid_airport = true;
@@ -77,6 +76,8 @@ void command_addplane() {
             valid_airport = true;
         }
     }
+
+    // check if there is a free space in the starting airport
     
     // add to BD
     Plane plane(name, route);
@@ -85,7 +86,7 @@ void command_addplane() {
 }
 
 void command_addairport() {
-    std::string name, x_str, y_str;
+    std::string name, x_str, y_str, size_str;
 
     // get name
     int valid_name;
@@ -116,10 +117,18 @@ void command_addairport() {
         std::cin >> y_str;
     }
 
+    std::cout << "How many planes can the airport fit: ";
+    std::cin >> size_str;
+    while (!is_number(size_str)) {
+        std::cout << "Positions have to be numbers! Try again..." << std::endl << "X position: ";
+        std::cin >> size_str;
+    }
+
     float x = std::stof(x_str);
     float y = std::stof(y_str);
+    int size = std::stod(size_str);
 
-    Airport airport(name, x, y);
+    Airport airport(name, x, y, size);
     airports.push_back(airport);
     std::cout << std::endl << "Successfully added a new airport!" << std::endl;
 }
