@@ -90,6 +90,22 @@ void command_addplane() {
     }
 }
 
+void command_remplane() {
+    std::string name;
+    std::cout << std::endl << "Name of the plane to remove: ";
+    std::cin >> name;
+
+    for (int i=0; i<planes.size(); i++) {
+        if (planes[i].name == name) {
+            if (planes[i].route.size() > 0 && (planes[i].state == "idle" || planes[i].state == "departure" || planes[i].state == "landing" || planes[i].state == "stopover" || planes[i].state == "arrived")) {
+                planes[i].depart_plane(planes[i].last_airport);
+            }
+            planes.erase(planes.begin() + i);
+            break;
+        }
+    }
+}
+
 void command_addairport() {
     std::string name, x_str, y_str, size_str;
 

@@ -2,11 +2,12 @@
 
 void display_menu() {
     std::cout << std::endl
-            //   << "- [routes] - list all current routes for planes and ships" << std::endl
-            //   << "- [addroute] - add a new route" << std::endl
+              //   << "- [routes] - list all current routes for planes and ships" << std::endl
+              //   << "- [addroute] - add a new route" << std::endl
               << "- [planes] - list all planes and their current routes" << std::endl
               << "- [airports] - list all airports" << std::endl
               << "- [addplane] - add a new plane" << std::endl
+              << "- [remplane] - remove a chosen plane" << std::endl
               << "- [addairport] - add a new airport" << std::endl
               << "- [ships] - list all ships and their current routes" << std::endl
               << "- [harbors] - list all ship harbors" << std::endl
@@ -35,6 +36,10 @@ void process_command(std::string command) {
         command_addplane();
         process_command(await_user_command_input());
     }
+    else if (command == "remplane") {
+        command_remplane();
+        process_command(await_user_command_input());
+    }
     else if (command == "addairport") {
         command_addairport();
         process_command(await_user_command_input());
@@ -56,7 +61,7 @@ void user_main() {
 
     while (running) {
         display_menu();
-        
+
         std::cin >> command;
 
         process_command(command);        

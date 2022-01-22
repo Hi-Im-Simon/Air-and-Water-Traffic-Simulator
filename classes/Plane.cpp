@@ -27,9 +27,7 @@ void Plane::print_info() {
     std::string prefix = "";
 
     std::cout << std::endl << "[Name]: " << name << " [State]: " << state;
-    if (state == "landing")
-        std::cout << " in " << last_airport;
-    else if (state == "stopover")
+    if (state == "landing" || state == "stopover" || state == "arrived")
         std::cout << " in " << last_airport;
     else if (state == "departure")
         std::cout << " from " << last_airport;
