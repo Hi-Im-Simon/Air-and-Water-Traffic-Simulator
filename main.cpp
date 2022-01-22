@@ -25,12 +25,14 @@ int main() {
     
     while (running) {
         // increment planes' travel distance
-        for (Plane& plane : planes) {
-            float temp_travelled = plane.travelled + plane.speed / 60;  // increment by speed in km/min
-            if (temp_travelled < plane.route_lengths.back())
-                plane.travelled = temp_travelled;
-            else
-                plane.travelled = plane.route_lengths.back();
+        for (Plane& plane : planes) {   // to wszystko jest przykładowe, można wyjebać i dać coś bardziej zaawansowanego
+            if (plane.route.size() > 1) {
+                float temp_travelled = plane.travelled + plane.speed / 60;  // increment by speed in km/min
+                if (temp_travelled < plane.route_lengths.back())
+                    plane.travelled = temp_travelled;
+                else
+                    plane.travelled = plane.route_lengths.back();
+            }
         }
 
         simulation_time++;

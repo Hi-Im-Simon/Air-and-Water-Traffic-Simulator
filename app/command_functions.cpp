@@ -6,31 +6,11 @@ std::string await_user_command_input() {    // alternative command input without
 }
 
 void command_planes() {
-    if (planes.size() < 1) {
+    if (planes.size() < 1)
         std::cout << std::endl << "There are no planes in the database yet. Exiting..." << std::endl;
-    }
     else {
-        for (Plane& plane : planes) {
-            std::string prefix = "";
-
-            std::cout << std::endl << "Name: " << plane.name << "\tRoute: ";
-            
-            if (plane.route.size() == 0)
-                std::cout << "- (stationary)";
-            else if (plane.route.size() == 1)
-                std::cout << plane.route[0].name << " (stationary)";
-            else {
-                for (Airport airport : plane.route) {
-                    std::cout << prefix << airport.name; 
-                    prefix = " - ";
-                }
-            }
-
-            if (plane.route.size() > 1) {
-                std::cout << " = " << plane.route_lengths.back() << "km" << "\tTravelled: " << plane.travelled << "km";
-            }
-        }
-
+        for (Plane& plane : planes)
+            plane.print_info();
         std::cout << std::endl;
     }
 }
