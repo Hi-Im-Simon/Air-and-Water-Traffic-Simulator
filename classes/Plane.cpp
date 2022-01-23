@@ -110,6 +110,7 @@ int Plane::land_plane(std::string ap) {
             return 0;
         }
     }
+    return 0;
 }
 
 void Plane::depart_plane(std::string ap) {
