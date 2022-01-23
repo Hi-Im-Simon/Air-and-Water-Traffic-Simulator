@@ -52,7 +52,7 @@ void command_addplane() {
     std::cin.ignore();
     while (true) {
         int valid_airport = false;
-        std::cout << "Name of airport " << route_i++ << " (hit enter to finish): ";
+        std::cout << "Name of airport " << route_i << " (hit enter to finish): ";
         std::getline(std::cin, temp_airport);
 
         if (temp_airport.length() == 0)
@@ -63,6 +63,7 @@ void command_addplane() {
                 if (airport.name == temp_airport) {
                     route.push_back(airport);
                     valid_airport = true;
+                    route_i++;
                 }
             }
         }
@@ -127,21 +128,21 @@ void command_addairport() {
     std::cout << "X coordinate (km): ";
     std::cin >> x_str;
     while (!is_number(x_str)) {
-        std::cout << "Positions have to be numbers! Try again..." << std::endl << "X position: ";
+        std::cout << "Positions have to be integers! Try again..." << std::endl << "X coordinate (km): ";
         std::cin >> x_str;
     }
 
     std::cout << "Y coordinate (km): ";
     std::cin >> y_str;
     while (!is_number(y_str)) {
-        std::cout << "Positions have to be numbers! Try again..." << std::endl << "Y position: ";
+        std::cout << "Positions have to be integers! Try again..." << std::endl << "Y coordinate (km): ";
         std::cin >> y_str;
     }
 
     std::cout << "How many planes can the airport fit: ";
     std::cin >> size_str;
     while (!is_number(size_str)) {
-        std::cout << "Positions have to be numbers! Try again..." << std::endl << "X position: ";
+        std::cout << "Airport capacity must be an integer! Try again..." << std::endl << "How many planes can the airport fit: ";
         std::cin >> size_str;
     }
 
