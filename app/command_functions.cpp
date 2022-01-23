@@ -82,7 +82,7 @@ void command_addplane() {
     // add to BD
     Plane plane(name, route);
 
-    if(!plane.land_plane(route[0].name))
+    if (route.size() > 0 && !plane.land_plane(route[0].name))
         std::cout << std::endl << "Primary airport can't fit another plane! Exiting..." << std::endl;
     else {
         planes.push_back(plane);

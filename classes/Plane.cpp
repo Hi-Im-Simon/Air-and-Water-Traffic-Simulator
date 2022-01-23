@@ -3,7 +3,7 @@
 Plane::Plane(std::string name, std::vector<Airport> route) {
     this->name = name;
     this->route = route;
-
+    
     if (route.size() > 0) {
         this->last_airport = route[0].name;
     }
@@ -19,8 +19,6 @@ Plane::Plane(std::string name, std::vector<Airport> route) {
     }
     else 
         this->state = "idle";
-
-    this->route_lengths = route_lengths;
 }
 
 void Plane::print_info() {
