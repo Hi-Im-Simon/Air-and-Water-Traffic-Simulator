@@ -1,6 +1,6 @@
 #include "Airport.hpp"
 
-Airport::Airport(std::string name, float x, float y, int size) {
+Airport::Airport(const std::string name, const float x, const float y, const int size) {
     this->name = name;
     this->x = x;
     this->y = y;

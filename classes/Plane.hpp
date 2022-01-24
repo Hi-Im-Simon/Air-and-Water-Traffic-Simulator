@@ -1,6 +1,8 @@
 #ifndef PLANE_HPP
 #define PLANE_HPP
 
+#include "Airport.hpp"
+
 class Plane {
     public:
         std::string name;
@@ -18,8 +20,8 @@ class Plane {
         // stopover - plane is in one of its connecting airports and waits (1 hour)
         // arrived - plane has finished the whole flight
         // waiting for landing spot - airport is full and plane is waiting for it to empty
-        Plane(std::string, std::vector<Airport>);
-        
+        Plane(const std::string, const std::vector<Airport>);
+
         void print_info();
         void action();
         int land_plane(std::string);

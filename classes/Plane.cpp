@@ -1,6 +1,7 @@
 #include "Plane.hpp"
 
-Plane::Plane(std::string name, std::vector<Airport> route) {
+Plane::Plane(const std::string name, const std::vector<Airport> route)
+{
     this->name = name;
     this->route = route;
     
