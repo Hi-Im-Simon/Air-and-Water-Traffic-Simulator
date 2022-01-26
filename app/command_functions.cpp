@@ -41,7 +41,7 @@ void command_addplane() {
         std::cin >> name;
 
         for (Plane& plane : planes) {
-            if (plane.name == name) {
+            if (plane.getName() == name) {
                 std::cout << "This name is already taken! Try again...";
                 valid_name = false;
             }
@@ -58,9 +58,9 @@ void command_addplane() {
         if (temp_airport.length() == 0)
             break;
 
-        if (route.size() == 0 || route.back().name != temp_airport) {    // check if plane isn't trying to go from-to the same airport
+        if (route.size() == 0 || route.back().getName() != temp_airport) {    // check if plane isn't trying to go from-to the same airport
             for (Airport& airport : airports) {
-                if (airport.name == temp_airport) {
+                if (airport.getName() == temp_airport) {
                     route.push_back(airport);
                     valid_airport = true;
                 }
@@ -80,12 +80,13 @@ void command_addplane() {
     // check if there is a free space in the starting airport
     
     // add to BD
-    Plane plane(name, route);
+    Plane *plane = new Plane(name,route);
 
-    if(!plane.land_plane(route[0].name))
+    if(!plane->land_plane(route[0].getName()))
         std::cout << std::endl << "Primary airport can't fit another plane! Exiting..." << std::endl;
     else {
-        planes.push_back(plane);
+        planes.push_back(*plane);
+        vehicles.push_back(plane);
         std::cout << std::endl << "Successfully added a new plane!" << std::endl;
     }
 }
@@ -96,9 +97,18 @@ void command_remplane() {
     std::cin >> name;
 
     for (int i=0; i<planes.size(); i++) {
-        if (planes[i].name == name) {
-            if (planes[i].route.size() > 0 && (planes[i].state == "idle" || planes[i].state == "departure" || planes[i].state == "landing" || planes[i].state == "stopover" || planes[i].state == "arrived")) {
-                planes[i].depart_plane(planes[i].last_airport);
+        if (planes[i].getName() == name) {
+            if (planes[i].getRoute().size() > 0 && (planes[i].getState() == "idle" || planes[i].getState() == "departure" || planes[i].getState() == "landing" || planes[i].getState() == "stopover" || planes[i].getState() == "arrived")) {
+                planes[i].depart_plane(planes[i].getLastAirport());
+            }
+            planes.erase(planes.begin() + i);
+            break;
+        }
+    }
+    for (int i=0; i<vehicles.size(); i++) {
+        if (vehicles[i]->getName() == name) {
+            if (planes[i].getRoute().size() > 0 && (planes[i].getState() == "idle" || planes[i].getState() == "departure" || planes[i].getState() == "landing" || planes[i].getState() == "stopover" || planes[i].getState() == "arrived")) {
+                planes[i].depart_plane(planes[i].getLastAirport());
             }
             planes.erase(planes.begin() + i);
             break;
@@ -117,7 +127,7 @@ void command_addairport() {
         std::cin >> name;
 
         for (Airport& airport : airports) {
-            if (airport.name == name) {
+            if (airport.getName() == name) {
                 std::cout << "This name is already taken! Try again...";
                 valid_name = false;
             }

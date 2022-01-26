@@ -22,8 +22,12 @@ int main() {
 
     while (running) {
         // increment planes' travel distance
-        for (Plane& plane : planes) {   // to wszystko jest przykładowe, można wyjebać i dać coś bardziej zaawansowanego
-            plane.action();
+        // for (Plane& plane : planes) { 
+        //     plane.action();
+        // }
+        
+        for (Vehicle *vehicle : vehicles) {
+            vehicle->action();
         }
 
         simulation_time++;

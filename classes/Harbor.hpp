@@ -1,14 +1,14 @@
-#ifndef AIRPORT_HPP
-#define AIRPORT_HPP
+#ifndef HARBOR_HPP
+#define HARBOR_HPP
 
-class Airport {
+class Harbor {
     private:
         std::string name;
         float x, y;
         int size, free_space;
 
     public:
-        Airport(std::string, float, float, int);
+        Harbor(std::string, float, float, int);
 
         std::string getName();
         float getX();
@@ -17,8 +17,8 @@ class Airport {
         int getFreeSpace();
 
         void print_info();
-        int land_plane();
-        void depart_plane();
+        bool moor_ship();
+        void depart_ship();
         
 };
 

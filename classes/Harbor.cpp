@@ -1,6 +1,6 @@
-#include "Airport.hpp"
+#include "Harbor.hpp"
 
-Airport::Airport(std::string name, float x, float y, int size) {
+Harbor::Harbor(std::string name, float x, float y, int size) {
     this->name = name;
     this->x = x;
     this->y = y;
@@ -8,11 +8,11 @@ Airport::Airport(std::string name, float x, float y, int size) {
     this->free_space = size;
 }
 
-void Airport::print_info() {
+void Harbor::print_info() {
     std::cout << std::endl << "[Name]: " << name << ", [Position]: " << x << " x " << y << " [Empty/Size]: " << free_space << "/" << size;
 }
 
-int Airport::land_plane() {
+bool Harbor::moor_ship() {
     if (free_space > 0) {
         free_space -= 1;
         return 1;
@@ -21,26 +21,26 @@ int Airport::land_plane() {
         return 0;
 }
 
-void Airport::depart_plane() {
+void Harbor::depart_ship() {
     free_space += 1;
 }
 
-std::string Airport::getName(){
+std::string Harbor::getName(){
     return this->name;
 };
 
-float Airport::getX(){
+float Harbor::getX(){
     return this->x;
 }
 
-float Airport::getY(){
+float Harbor::getY(){
     return this->y;
 }
 
-int Airport::getSize(){
+int Harbor::getSize(){
     return this->size;
 }
 
-int Airport::getFreeSpace(){
+int Harbor::getFreeSpace(){
     return this->free_space;
 }
