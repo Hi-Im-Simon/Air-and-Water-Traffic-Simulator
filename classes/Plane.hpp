@@ -28,6 +28,7 @@ class Plane : public Vehicle {
         
         void print_info();
         void action();
+        void remPrep();
 
         int land_plane(std::string);
         void depart_plane(std::string);

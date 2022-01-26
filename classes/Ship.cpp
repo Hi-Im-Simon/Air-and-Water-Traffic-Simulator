@@ -69,7 +69,7 @@ void Ship::action() {
                     if (moor_ship(last_harbor))
                         this->state = "mooring";
                     else
-                        this->state = "waiting for landing spot";
+                        this->state = "waiting for a spot";
                     return;
                 }
             }
@@ -83,7 +83,7 @@ void Ship::action() {
                 this->moor_depart_timer = 0;
                 if (travelled == route_lengths.back())  // if plane has arrived to its final destination
                     this->state = "arrived";
-                else                                    // if plane has arrived to one of its stopover airports
+                else                                    // if plane has arrived to one of its stopover harbors
                     this->state = "stopover";
             }
             else
@@ -129,4 +129,10 @@ std::vector<Harbor> Ship::getRoute(){
 
 std::string Ship::getLastHarbor(){
     return last_harbor;
+}
+
+void Ship::remPrep(){
+    if (route.size() > 0 && (state == "idle" || state == "departure" || state == "mooring" || state == "stopover" || state == "arrived")) {
+        this->depart_ship(last_harbor);
+    }
 }

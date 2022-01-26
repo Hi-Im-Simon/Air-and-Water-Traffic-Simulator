@@ -130,3 +130,9 @@ std::vector<Airport> Plane::getRoute(){
 std::string Plane::getLastAirport(){
     return last_airport;
 }
+
+void Plane::remPrep(){
+    if (route.size() > 0 && (state == "idle" || state == "departure" || state == "landing" || state == "stopover" || state == "arrived")) {
+        this->depart_plane(last_airport);
+    }
+}

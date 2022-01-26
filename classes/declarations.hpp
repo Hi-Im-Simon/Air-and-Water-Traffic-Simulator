@@ -7,12 +7,10 @@ std::vector<Vehicle*> vehicles;
 #include "Harbor.cpp"
 std::vector<Harbor> harbors;
 
-#include "Ship.cpp"
-
 #include "Airport.cpp"
 std::vector<Airport> airports;
 
+#include "Ship.cpp"
 #include "Plane.cpp"
-std::vector<Plane> planes;
 
 #endif

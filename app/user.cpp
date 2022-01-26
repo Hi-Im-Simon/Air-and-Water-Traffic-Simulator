@@ -44,6 +44,26 @@ void process_command(std::string command) {
         command_addairport();
         process_command(await_user_command_input());
     }
+    else if (command == "ships") {
+        command_ships();
+        process_command(await_user_command_input());
+    }
+    else if (command == "harbors") {
+        command_harbors();
+        process_command(await_user_command_input());
+    }
+    else if (command == "addship") {
+        command_addship();
+        process_command(await_user_command_input());
+    }
+    else if (command == "remship") {
+        command_remship();
+        process_command(await_user_command_input());
+    }
+    else if (command == "addharbor") {
+        command_addharbor();
+        process_command(await_user_command_input());
+    }
     else if (command == "time") {
         command_time();
         process_command(await_user_command_input());

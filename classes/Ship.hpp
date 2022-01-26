@@ -27,6 +27,7 @@ class Ship : public Vehicle {
         
         void print_info();
         void action();
+        void remPrep();
 
         bool moor_ship(std::string);
         void depart_ship(std::string);

@@ -23,8 +23,9 @@ class Vehicle {
 
     public:
         
-        virtual void print_info();
-        virtual void action();
+        virtual void print_info() = 0;
+        virtual void action() = 0;
+        virtual void remPrep() = 0;     // prepare for removal
         
         std::string getName();
         std::string getState();
