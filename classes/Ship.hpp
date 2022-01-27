@@ -4,6 +4,7 @@
 class Ship : public Vehicle {
     private:
         int dock_depart_timer = 0;
+        float max_speed = 53.523;
         
         std::string state;
         // WHAT DIFFERENT STATES MEAN:
