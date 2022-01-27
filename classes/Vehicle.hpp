@@ -1,13 +1,15 @@
-#ifndef PLANE_HPP
-#define PLANE_HPP
+#ifndef VEHICLE_HPP
+#define VEHICLE_HPP
 
-
-class Plane : public Vehicle {
-    private:
-        int land_depart_timer = 0;
+class Vehicle {
+    protected:
+        float max_speed = 804.67;    // (kmph) may be changed to be set by a user
+        int stopover_timer = 0;
+        std::string name;
         
         std::string state;
-        // WHAT DIFFERENT STATES MEAN:
+        
+        // WHAT DIFFERENT STATES MEAN: idle = 
         // idle - plane has 0/1 airport in its route, so it will never depart
         // departure - plane will start a flight in 15 minutes (with full speed to make it easier)
         // flight - plane is in air with full speed
@@ -15,26 +17,18 @@ class Plane : public Vehicle {
         // stopover - plane is in one of its connecting airports and waits (1 hour)
         // arrived - plane has finished the whole flight
         // waiting for landing spot - airport is full and plane is waiting for it to empty
-        
-        std::vector<Airport> route;
-        std::string last_airport;
-
-        std::vector<float> route_lengths;
+    
+        float travelled = 0;
 
     public:
-        // FUNCTIONS
         
-        Plane(const std::string, const std::vector<Airport>);
+        virtual void print_info() = 0;
+        virtual void action() = 0;
+        virtual void remPrep() = 0;     // prepare for removal
         
-        void print_info();
-        void action();
-        void remPrep();
+        std::string getName();
+        std::string getState();
 
-        int land_plane(std::string);
-        void depart_plane(std::string);
-
-        std::vector<Airport> getRoute();
-        std::string getLastAirport();
 };
 
 #endif

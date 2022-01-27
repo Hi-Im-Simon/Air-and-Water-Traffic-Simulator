@@ -9,11 +9,14 @@ void display_menu() {
               << "- [addplane] - add a new plane" << std::endl
               << "- [remplane] - remove a chosen plane" << std::endl
               << "- [addairport] - add a new airport" << std::endl
-            //   << "- [ships] - list all ships and their current routes" << std::endl
-            //   << "- [harbors] - list all ship harbors" << std::endl
-            //   << "- [addship] - add a new ship" << std::endl
-            //   << "- [addharbor] - add a new ship harbor" << std::endl
+      
+              << "- [ships] - list all ships and their current routes" << std::endl
+              << "- [harbors] - list all ship harbors" << std::endl
+              << "- [addship] - add a new ship" << std::endl
+              << "- [remship] - remove a chosen ship" << std::endl
+              << "- [addharbor] - add a new ship harbor" << std::endl
 
+              << std::endl
               << "- [time] - show current simulation time" << std::endl
 
               << "- [exit] - leave the simulation" << std::endl
@@ -42,6 +45,26 @@ void process_command(std::string command) {
     }
     else if (command == "addairport") {
         command_addairport();
+        process_command(await_user_command_input());
+    }
+    else if (command == "ships") {
+        command_ships();
+        process_command(await_user_command_input());
+    }
+    else if (command == "harbors") {
+        command_harbors();
+        process_command(await_user_command_input());
+    }
+    else if (command == "addship") {
+        command_addship();
+        process_command(await_user_command_input());
+    }
+    else if (command == "remship") {
+        command_remship();
+        process_command(await_user_command_input());
+    }
+    else if (command == "addharbor") {
+        command_addharbor();
         process_command(await_user_command_input());
     }
     else if (command == "time") {

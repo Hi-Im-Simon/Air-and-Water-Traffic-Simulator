@@ -6,7 +6,7 @@ Plane::Plane(const std::string name, const std::vector<Airport> route)
     this->route = route;
     
     if (route.size() > 0) {
-        this->last_airport = route[0].name;
+        this->last_airport = route[0].getName();
     }
 
     if (route.size() > 1) {
@@ -14,7 +14,7 @@ Plane::Plane(const std::string name, const std::vector<Airport> route)
         float length = 0;
         route_lengths.push_back(0);
         for (int i = 0; i < route.size() - 1; i++) {
-            length += sqrt(pow((route[i+1].x - route[i].x), 2.0) + pow((route[i+1].y - route[i].y), 2.0));
+            length += sqrt(pow((route[i+1].getX() - route[i].getX()), 2.0) + pow((route[i+1].getY() - route[i].getY()), 2.0));
             route_lengths.push_back(length);
         }
     }
@@ -25,7 +25,7 @@ Plane::Plane(const std::string name, const std::vector<Airport> route)
 void Plane::print_info() {
     std::string prefix = "";
 
-    std::cout << std::endl << "[Name]: " << name << " [State]: " << state;
+    std::cout << std::endl << "[Name]: " << this->name << " [State]: " << this->state;
     if (state == "landing" || state == "stopover" || state == "arrived")
         std::cout << " in " << last_airport;
     else if (state == "departure")
@@ -35,10 +35,10 @@ void Plane::print_info() {
     if (route.size() == 0)
         std::cout << "-";
     else if (route.size() == 1)
-        std::cout << route[0].name;
+        std::cout << route[0].getName();
     else {
         for (Airport airport : route) {
-            std::cout << prefix << airport.name; 
+            std::cout << prefix << airport.getName(); 
             prefix = " - ";
         }
     }
@@ -52,20 +52,18 @@ void Plane::action() {
     if (route.size() > 1) {
         if (state == "departure") {
             if (land_depart_timer >= departure_length) {
-                this->land_depart_timer = 0;
-                this->state = "flight";
                 depart_plane(last_airport);
             }
             else
                 this->land_depart_timer += 1;
         }
         else if (state == "flight") {
-            float temp_travelled = travelled + max_speed / 60;  // increment by speed in km/min
+            float temp_travelled = travelled + this->max_speed / 60;  // increment by speed in km/min
             for (int i=0; i<route_lengths.size(); i++){
                 // std::cout << travelled << " " << temp_travelled << " / " << route_lengths[i] << std::endl; 
                 if (travelled < route_lengths[i] && temp_travelled >= route_lengths[i]) {
                     this->travelled = route_lengths[i];
-                    this->last_airport = route[i].name;
+                    this->last_airport = route[i].getName();
 
                     if (land_plane(last_airport))
                         this->state = "landing";
@@ -103,7 +101,7 @@ void Plane::action() {
 
 int Plane::land_plane(std::string ap) {
     for (Airport& airport : airports) {
-        if (airport.name == ap) {
+        if (airport.getName() == ap) {
             if (airport.land_plane())
                 return 1;
             return 0;
@@ -113,8 +111,27 @@ int Plane::land_plane(std::string ap) {
 }
 
 void Plane::depart_plane(std::string ap) {
+    // Change the state of the plane
+    this->land_depart_timer = 0;
+    this->state = "flight";
+
+    // Remove the plane from its airport
     for (Airport& airport : airports) {
-        if (airport.name == ap)
+        if (airport.getName() == ap)
             airport.depart_plane();
+    }
+}
+
+std::vector<Airport> Plane::getRoute(){
+    return route;
+}
+
+std::string Plane::getLastAirport(){
+    return last_airport;
+}
+
+void Plane::remPrep(){
+    if (route.size() > 0 && (state == "idle" || state == "departure" || state == "landing" || state == "stopover" || state == "arrived")) {
+        this->depart_plane(last_airport);
     }
 }
