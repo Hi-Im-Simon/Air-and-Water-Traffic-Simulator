@@ -16,6 +16,7 @@ void command_planes() {
     if (size == 0){
         std::cout << std::endl << "There are no planes in the database yet. Exiting...";
     }
+    std::cout << std::endl;
 }
 
 void command_airports() {
@@ -54,7 +55,7 @@ void command_addplane() {
     std::cin.ignore();
     while (true) {
         bool valid_airport = false;
-        std::cout << "Name of airport " << route_i++ << " (hit enter to finish): ";
+        std::cout << "Name of airport " << route_i << " (hit enter to finish): ";
         std::getline(std::cin, temp_airport);
 
         if (temp_airport.length() == 0)
@@ -65,6 +66,7 @@ void command_addplane() {
                 if (airport.getName() == temp_airport) {
                     route.push_back(airport);
                     valid_airport = true;
+                    route_i++;
                 }
             }
         }
@@ -84,7 +86,7 @@ void command_addplane() {
     // add to BD
     Plane *plane = new Plane(name,route);
 
-    if(!plane->land_plane(route[0].getName()))
+    if(route.size() > 0 && !plane->land_plane(route[0].getName()))
         std::cout << std::endl << "Primary airport can't fit another plane! Exiting..." << std::endl;
     else {
         vehicles.push_back(plane);
@@ -203,7 +205,7 @@ void command_addship(){
     std::cin.ignore();
     while (true) {
         bool valid_harbor = false;
-        std::cout << "Name of harbor " << route_i++ << " (hit enter to finish): ";
+        std::cout << "Name of harbor " << route_i << " (hit enter to finish): ";
         std::getline(std::cin, temp_harbor);
 
         if (temp_harbor.length() == 0)
@@ -214,6 +216,7 @@ void command_addship(){
                 if (harbor.getName() == temp_harbor) {
                     route.push_back(harbor);
                     valid_harbor = true;
+                    route_i++;
                 }
             }
         }
@@ -233,7 +236,7 @@ void command_addship(){
     // add to BD
     Ship *ship = new Ship(name,route);
 
-    if(!ship->moor_ship(route[0].getName()))
+    if(route.size() > 0 && !ship->dock_ship(route[0].getName()))
         std::cout << std::endl << "Primary harbor can't fit another ship! Exiting..." << std::endl;
     else {
         vehicles.push_back(ship);

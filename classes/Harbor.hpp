@@ -8,7 +8,7 @@ class Harbor {
         int size, free_space;
 
     public:
-        Harbor(std::string, float, float, int);
+        Harbor(const std::string, const float, const float, const int);
 
         std::string getName();
         float getX();
@@ -17,7 +17,7 @@ class Harbor {
         int getFreeSpace();
 
         void print_info();
-        bool moor_ship();
+        bool dock_ship();
         void depart_ship();
         
 };

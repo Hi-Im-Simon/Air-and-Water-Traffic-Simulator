@@ -8,7 +8,7 @@ class Airport {
         int size, free_space;
 
     public:
-        Airport(std::string, float, float, int);
+        Airport(const std::string, const float, const float, const int);
 
         std::string getName();
         float getX();

@@ -24,7 +24,7 @@ class Plane : public Vehicle {
     public:
         // FUNCTIONS
         
-        Plane(std::string, std::vector<Airport>);
+        Plane(const std::string, const std::vector<Airport>);
         
         void print_info();
         void action();

@@ -4,7 +4,6 @@
 class Vehicle {
     protected:
         float max_speed = 804.67;    // (kmph) may be changed to be set by a user
-        int land_depart_timer = 0;
         int stopover_timer = 0;
         std::string name;
         

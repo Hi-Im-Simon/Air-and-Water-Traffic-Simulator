@@ -3,14 +3,14 @@
 
 class Ship : public Vehicle {
     private:
-        int moor_depart_timer = 0;
+        int dock_depart_timer = 0;
         
         std::string state;
         // WHAT DIFFERENT STATES MEAN:
         // idle - ship has 0/1 port in its route, so it will never depart
         // departure - ship will start sailing in 15 minutes (with full speed to make it easier)
         // sailing - ship alredy set to sea with full speed
-        // mooring - ship will moor at a port in 15 minutes
+        // docking - ship will dock at a port in 15 minutes
         // stopover - ship is in one of its connecting ports and waits (1 hour)
         // arrived - ship has finished the whole cruise
         // waiting for a spot - port is full and the ship is waiting for it to empty
@@ -23,13 +23,13 @@ class Ship : public Vehicle {
     public:
         // FUNCTIONS
         
-        Ship(std::string, std::vector<Harbor>);
+        Ship(const std::string, const std::vector<Harbor>);
         
         void print_info();
         void action();
         void remPrep();
 
-        bool moor_ship(std::string);
+        bool dock_ship(std::string);
         void depart_ship(std::string);
 
         std::vector<Harbor> getRoute();

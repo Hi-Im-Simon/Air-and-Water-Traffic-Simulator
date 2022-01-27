@@ -7,4 +7,5 @@ void create_starting_objects() {
     harbors.push_back(Harbor("Gdynia", 2031.65, 6087.45, 3));
     harbors.push_back(Harbor("Swinoujscie", 1676.46, 6018.34, 2));
     harbors.push_back(Harbor("Riga", 2846.38, 6346.21, 4));
+
 }

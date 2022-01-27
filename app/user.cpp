@@ -12,8 +12,10 @@ void display_menu() {
               << "- [ships] - list all ships and their current routes" << std::endl
               << "- [harbors] - list all ship harbors" << std::endl
               << "- [addship] - add a new ship" << std::endl
+              << "- [remship] - remove a chosen ship" << std::endl
               << "- [addharbor] - add a new ship harbor" << std::endl
 
+              << std::endl
               << "- [time] - show current simulation time" << std::endl
 
               << "- [exit] - leave the simulation" << std::endl

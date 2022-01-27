@@ -12,7 +12,7 @@ void Harbor::print_info() {
     std::cout << std::endl << "[Name]: " << name << ", [Position]: " << x << " x " << y << " [Empty/Size]: " << free_space << "/" << size;
 }
 
-bool Harbor::moor_ship() {
+bool Harbor::dock_ship() {
     if (free_space > 0) {
         free_space -= 1;
         return 1;
