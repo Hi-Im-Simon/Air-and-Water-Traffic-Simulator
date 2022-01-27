@@ -9,6 +9,7 @@ void display_menu() {
               << "- [addplane] - add a new plane" << std::endl
               << "- [remplane] - remove a chosen plane" << std::endl
               << "- [addairport] - add a new airport" << std::endl
+      
               << "- [ships] - list all ships and their current routes" << std::endl
               << "- [harbors] - list all ship harbors" << std::endl
               << "- [addship] - add a new ship" << std::endl

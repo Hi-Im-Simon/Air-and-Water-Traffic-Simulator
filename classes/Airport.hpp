@@ -6,7 +6,7 @@ class Airport {
         std::string name;
         float x, y;
         int size, free_space;
-
+  
     public:
         Airport(const std::string, const float, const float, const int);
 
