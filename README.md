@@ -2,7 +2,7 @@
 
 # Symulacja ruchu powietrznego i wodnego
 
-- Zakres projektu
+- [Zakres projektu](#1.)
 - Diagram klas
 - Wymagania systemowe
 
