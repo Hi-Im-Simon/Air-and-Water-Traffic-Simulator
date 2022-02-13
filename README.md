@@ -1,21 +1,21 @@
-# Air and Water Traffic Simulator
-
 # DOKUMENTACJA TECHNICZNA PROJEKTU
 
 # Symulacja ruchu powietrznego i wodnego
 
-```
 github.com/Hi-Im-Simon/Air-and-Water-Traffic-Simulator
-```
+
+
 ## Przedmiot: PROGRAMOWANIE OBIEKTOWE
 
-1. Zakres projektu
-2. Diagram klas
-3. Wymagania systemowe
-    3.1. Wymagania funkcjonalne
-    3.2. Wymagania pozafunkcjonalne
-4. Realizacja projektu
-5. Kryteria akceptacyjne
+* [Zakres projektu](#Zakres projektu)
+* [Diagram klas](#Diagram klas)
+* [Wymagania systemowe](#Wymagania systemowe)
+
+    * [Wymagania funkcjonalne](#Wymagania funkcjonalne)
+    * [Wymagania pozafunkcjonalne](#Wymagania pozafunkcjonalne)
+
+* [Realizacja projektu](#Realizacja projektu)
+* [Kryteria akceptacyjne](#Kryteria akceptacyjne)
 
 ## 1. Zakres projektu
 
