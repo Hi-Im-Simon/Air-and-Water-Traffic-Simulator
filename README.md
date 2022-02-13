@@ -15,9 +15,9 @@ github.com/Hi-Im-Simon/Air-and-Water-Traffic-Simulator
 
 #### 3. Wymagania systemowe
 
-#### 3.1. Wymagania funkcjonalne
+    #### 3.1. Wymagania funkcjonalne
 
-#### 3.2. Wymagania pozafunkcjonalne
+    #### 3.2. Wymagania pozafunkcjonalne
 
 #### 4. Realizacja projektu
 
