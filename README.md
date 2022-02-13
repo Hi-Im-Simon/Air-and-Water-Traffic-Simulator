@@ -3,14 +3,14 @@
 # Symulacja ruchu powietrznego i wodnego
 
 - [Zakres projektu](#1-zakres-projektu)
-- Diagram klas
-- Wymagania systemowe
+- [Diagram klas](#2-diagram-klas)
+- [Wymagania systemowe](#3-wymagania-systemowe)
 
-    - Wymagania funkcjonalne
-    - Wymagania pozafunkcjonalne
+    - [Wymagania funkcjonalne](#31-wymagania-funkcjonalne)
+    - [Wymagania pozafunkcjonalne](#32-wymagania-pozafunkcjonalne)
 
-- Realizacja projektu
-- Kryteria akceptacyjne
+- [Realizacja projektu](#4-realizacja-projektu)
+- [Kryteria akceptacyjne](#5-kryteria-akceptacyjne)
 
 ## 1. Zakres projektu
 
