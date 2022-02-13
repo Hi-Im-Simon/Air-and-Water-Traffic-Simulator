@@ -2,20 +2,17 @@
 
 # Symulacja ruchu powietrznego i wodnego
 
-github.com/Hi-Im-Simon/Air-and-Water-Traffic-Simulator
-
-
 ## Przedmiot: PROGRAMOWANIE OBIEKTOWE
 
-- [Zakres projektu](#Zakres projektu)
-- [Diagram klas](#Diagram klas)
-- [Wymagania systemowe](#Wymagania systemowe)
+- Zakres projektu
+- Diagram klas
+- Wymagania systemowe
 
-    - [Wymagania funkcjonalne](#Wymagania funkcjonalne)
-    - [Wymagania pozafunkcjonalne](#Wymagania pozafunkcjonalne)
+    - Wymagania funkcjonalne
+    - Wymagania pozafunkcjonalne
 
-- [Realizacja projektu](#Realizacja projektu)
-- [Kryteria akceptacyjne](#Kryteria akceptacyjne)
+- Realizacja projektu
+- Kryteria akceptacyjne
 
 ## 1. Zakres projektu
 
