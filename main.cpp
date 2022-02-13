@@ -21,11 +21,6 @@ int main() {
     std::thread thread_user(user_main);
 
     while (running) {
-        // increment planes' travel distance
-        // for (Plane& plane : planes) { 
-        //     plane.action();
-        // }
-        
         for (Vehicle *vehicle : vehicles) {
             vehicle->action();
         }
