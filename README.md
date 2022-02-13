@@ -58,13 +58,9 @@ github.com/Hi-Im-Simon/Air-and-Water-Traffic-Simulator
 
 ## 4. Realizacja projektu
 
-```
-Praca podzielona zostanie na części (m. in. user-side, server-side) i rozdzielona
-pomiędzy uczestników grupy.
-```
-```
+Praca podzielona zostanie na części (m. in. user-side, server-side) i rozdzielona pomiędzy uczestników grupy.
+
 Etapami tworzenia projektu będą:
-```
 - stworzenie klas wykorzystywanych w dalszej części projektu
 - połączenie klas i stworzenie z nich podstawowego systemu
 - dodawanie kolejnych funkcjonalności wraz z postępem pracy i zaobserwowanym potencjałem projektu
@@ -89,18 +85,10 @@ Sprawdzenie podstawowych funkcjonalności:
     * addplane - dodawanie nowego samolotu do bazy danychwraz z jego trasą (składającą się z istniejących wcześniej lotnisk) lub samolotu stacjonarnego (z trasą przechodzącą przez ilość lotnisk równą 0 lub 1)
     * addharbor oraz addship - według wcześniejszego schematu dla przystani wodnych oraz statków
  
-● Poprzez wykonanie poleceń wypisywania informacji z bazy danych:
-○ airports - wypisanie dostępnych lotnisk, ich położeniaoraz stopnia
-zapełnienia
-○ planes - wypisanie istniejących samolotów, ich aktualnegostanu, trasy,
-długości trasy oraz przebytego dystansu
-○ harbors oraz ships - według wcześniejszego schematudla przystani
-wodnych oraz statków
-● Poprzez wykonanie poleceń usuwania informacji z bazy danych:
-○ remplane - usunięcie samolotu z bazy oraz zwolnieniezajmowanego
-przez niego miejsca na jego aktualnym lotnisku (komenda powinna
-być wykorzystywana głównie w celu usunięcia samolotów
-stacjonarnych lub tych, które zakończyły już swój lot)
-○ remship - według wcześniejszego schematu dla statków
-```
-
+* Poprzez wykonanie poleceń wypisywania informacji z bazy danych:
+    * airports - wypisanie dostępnych lotnisk, ich położeniaoraz stopnia zapełnienia
+    * planes - wypisanie istniejących samolotów, ich aktualnegostanu, trasy, długości trasy oraz przebytego dystansu
+    * harbors oraz ships - według wcześniejszego schematudla przystani wodnych oraz statków
+* Poprzez wykonanie poleceń usuwania informacji z bazy danych:
+    * remplane - usunięcie samolotu z bazy oraz zwolnieniezajmowanego przez niego miejsca na jego aktualnym lotnisku (komenda powinna być wykorzystywana głównie w celu usunięcia samolotów stacjonarnych lub tych, które zakończyły już swój lot)
+    * remship - według wcześniejszego schematu dla statków
