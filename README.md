@@ -2,8 +2,6 @@
 
 # Symulacja ruchu powietrznego i wodnego
 
-## Przedmiot: PROGRAMOWANIE OBIEKTOWE
-
 - Zakres projektu
 - Diagram klas
 - Wymagania systemowe
