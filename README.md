@@ -14,17 +14,10 @@
 
 ## 1. Zakres projektu
 
-- System wykorzystywany będzie do przeprowadzania symulacji oraz przewidywania
-    ruchu lotniczego oraz wodnego.
-- Granicą używalności systemu będą wszelkiego rodzaju wydarzenia losowe, które nie
-    są możliwe do przewidzenia w symulacji. Nie będzie on posiadał granic w postaci
-    wymagań systemowych, ponieważ będzie on bardzo lekko i wydajny, przez co nie
-    powinien mieć problemów nawet z bardzo dużą bazą maszyn, czy miejsc
-    transportowych.
+- System wykorzystywany będzie do przeprowadzania symulacji oraz przewidywania ruchu lotniczego oraz wodnego.
+- Granicą używalności systemu będą wszelkiego rodzaju wydarzenia losowe, które nie są możliwe do przewidzenia w symulacji. Nie będzie on posiadał granic w postaci wymagań systemowych, ponieważ będzie on bardzo lekko i wydajny, przez co nie powinien mieć problemów nawet z bardzo dużą bazą maszyn, czy miejsc transportowych.
 - Targetem systemu jest ogólnie pojęty przemysł transportowy oraz jego pasjonaci.
-- Potrzeba utworzenia systemu wynika z zapotrzebowania rynkowego na dobrze
-    działający oraz przyjazny dla użytkownika system, który będzie posiadał podobne
-    możliwości.
+- Potrzeba utworzenia systemu wynika z zapotrzebowania rynkowego na dobrze działający oraz przyjazny dla użytkownika system, który będzie posiadał podobne możliwości.
 
 
 ## 2. Diagram klas
