@@ -34,6 +34,8 @@ github.com/Hi-Im-Simon/Air-and-Water-Traffic-Simulator
 
 ## 2. Diagram klas
 
+![image](https://user-images.githubusercontent.com/75808585/153770451-e1e9ed63-86bf-41f6-a2f7-c8eca3cdb5c0.png)
+
 
 ## 3. Wymagania systemowe
 
@@ -42,12 +44,9 @@ github.com/Hi-Im-Simon/Air-and-Water-Traffic-Simulator
 - możliwość dodawania i usuwania linii lotniczych oraz połączeń morskich
 - baza lotów oraz rejsów
 - monitorowanie zachowań portów lotniczych i wodnych
-- monitorowanie stanów samolotów oraz statków w czasie rzeczywistym
-    podczas ich podróży
+- monitorowanie stanów samolotów oraz statków w czasie rzeczywistym podczas ich podróży
 - podgląd aktualnego czasu symulacji
-- rozdzielenie interfejsu użytkownika od procesu odpowiedzialnego za
-    przetwarzanie informacji oraz wykonywanie obliczeń osiągnięte dzięki
-    wielowątkowości
+- rozdzielenie interfejsu użytkownika od procesu odpowiedzialnego za przetwarzanie informacji oraz wykonywanie obliczeń osiągnięte dzięki wielowątkowości
 
 ### 3.2 Wymagania pozafunkcjonalne
 
@@ -68,40 +67,28 @@ Etapami tworzenia projektu będą:
 ```
 - stworzenie klas wykorzystywanych w dalszej części projektu
 - połączenie klas i stworzenie z nich podstawowego systemu
-- dodawanie kolejnych funkcjonalności wraz z postępem pracy i
-    zaobserwowanym potencjałem projektu
-- stworzenie interfejsu graficznego oraz przyjaźniejszego interfejsu dla
-    użytkownika
+- dodawanie kolejnych funkcjonalności wraz z postępem pracy i zaobserwowanym potencjałem projektu
+- stworzenie interfejsu graficznego oraz przyjaźniejszego interfejsu dla użytkownika
 
-```
-Program napisany będzie w językach programowania C/C++ przy wykorzystaniu
-odpowiednich bibliotek.
-Bibliotekami oraz plikami nagłówkowymi wykorzystywanymi w projekcie będą
-między innymi:
-```
-- mingw thread - aby program mógł jednocześnie pobierać dane od
-    użytkownika oraz wykonywać obliczenia w tle
+Program napisany będzie w językach programowania C/C++ przy wykorzystaniu odpowiednich bibliotek.
+Bibliotekami oraz plikami nagłówkowymi wykorzystywanymi w projekcie będą między innymi:
+
+- mingw thread - aby program mógł jednocześnie pobierać dane od użytkownika oraz wykonywać obliczenia w tle
 - math - ułatwienie wykonywania obliczeń
 - inne, np. iostream, string, vector, map
 
-```
-Program wykonany będzie w całości w języku angielskim w celu zmaksymalizowania
-potencjalnego targetu.
-```
+Program wykonany będzie w całości w języku angielskim w celu zmaksymalizowania potencjalnego targetu.
+
 
 ## 5. Kryteria akceptacyjne
 
-```
 Sprawdzenie podstawowych funkcjonalności:
-● Poprzez wykonanie poleceń wprowadzania nowych informacji do bazy
-danych:
-○ addairport - dodawanie nowego lotniska do bazy danychwraz z
-położeniem (koordynaty x oraz y) na symulowanej mapie
-○ addplane - dodawanie nowego samolotu do bazy danychwraz z jego
-trasą (składającą się z istniejących wcześniej lotnisk) lub samolotu
-stacjonarnego (z trasą przechodzącą przez ilość lotnisk równą 0 lub 1)
-○ addharbor oraz addship - według wcześniejszego schematudla
-przystani wodnych oraz statków
+* Poprzez wykonanie poleceń wprowadzania nowych informacji do bazy danych:
+
+    * addairport - dodawanie nowego lotniska do bazy danychwraz z położeniem (koordynaty x oraz y) na symulowanej mapie
+    * addplane - dodawanie nowego samolotu do bazy danychwraz z jego trasą (składającą się z istniejących wcześniej lotnisk) lub samolotu stacjonarnego (z trasą przechodzącą przez ilość lotnisk równą 0 lub 1)
+    * addharbor oraz addship - według wcześniejszego schematu dla przystani wodnych oraz statków
+ 
 ● Poprzez wykonanie poleceń wypisywania informacji z bazy danych:
 ○ airports - wypisanie dostępnych lotnisk, ich położeniaoraz stopnia
 zapełnienia
