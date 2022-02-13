@@ -9,19 +9,13 @@ github.com/Hi-Im-Simon/Air-and-Water-Traffic-Simulator
 ```
 ## Przedmiot: PROGRAMOWANIE OBIEKTOWE
 
-#### 1. Zakres projektu
-
-#### 2. Diagram klas
-
-#### 3. Wymagania systemowe
-
-    #### 3.1. Wymagania funkcjonalne
-
-    #### 3.2. Wymagania pozafunkcjonalne
-
-#### 4. Realizacja projektu
-
-#### 5. Kryteria akceptacyjne
+1. Zakres projektu
+2. Diagram klas
+3. Wymagania systemowe
+    3.1. Wymagania funkcjonalne
+    3.2. Wymagania pozafunkcjonalne
+4. Realizacja projektu
+5. Kryteria akceptacyjne
 
 ## 1. Zakres projektu
 
