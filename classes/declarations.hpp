@@ -1,6 +1,8 @@
 #ifndef DECLARATIONS_HPP
 #define DECLARATIONS_HPP
 
+#include "Port.cpp"
+
 #include "Vehicle.cpp"
 std::vector<Vehicle*> vehicles;
 
