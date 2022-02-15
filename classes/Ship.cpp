@@ -3,6 +3,7 @@
 Ship::Ship(std::string name, std::vector<Harbor> route) {
     this->name = name;
     this->route = route;
+    this->max_speed = 53.523;
 
     if (route.size() > 0) {
         this->last_harbor = route[0].getName();
