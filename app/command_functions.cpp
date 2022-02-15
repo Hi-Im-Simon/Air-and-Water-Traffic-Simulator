@@ -223,12 +223,12 @@ void command_addship(){
             }
         }
         else {
-            std::cout << "A plane can't visit the same airport it's currently in! (skipped)" << std::endl;
+            std::cout << "A ship can't visit the same harbor it's currently in! (skipped)" << std::endl;
             valid_harbor = true;
         }
         
         if (!valid_harbor) {
-            std::cout << "This airport doesn't exist! (skipped)" << std::endl;
+            std::cout << "This harbor doesn't exist! (skipped)" << std::endl;
             valid_harbor = true;
         }
     }
